@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!--  Enable annotations  -->
+	<context:annotation-config/> 
+
+	<bean id="emp" class="com.cg.models.Employee" autowire="byName">
+		<property name="firstName" value="Shivaji" />
+		<property name="lastName" value="Gaekwad"/>
+	<!-- 	<property name="department" ref="dept"/> -->
+	</bean>
+	
+	<bean id="department" class="com.cg.models.Department">
+		<property name="name" value="QA" />
+		<property name="location" value="Pune"/>
+	</bean>
+</beans>
