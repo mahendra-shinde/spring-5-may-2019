@@ -4,6 +4,31 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	
+	<bean id="emp1" class="com.cg.models.Employee">
+		<property name="firstName" value="Rahul" />
+		<property name="lastName" value="Jaggu"/>
+	</bean>
+	<bean id="emp2" class="com.cg.models.Employee">
+		<property name="firstName" value="Mallu" />
+		<property name="lastName" value="Jaggu"/>
+	</bean>
+	<bean id="emp3" class="com.cg.models.Employee">
+		<property name="firstName" value="Dabba" />
+		<property name="lastName" value="Jaggu"/>
+	</bean>
+	<bean id="dept" class="com.cg.models.Department">
+		<property name="location" value="chennai"/>
+		<property name="employees">
+			<list>
+				<ref bean="emp1"/>
+				<ref bean="emp2"/>
+				<ref bean="emp3"/>
+				<bean class="com.cg.models.Employee">
+					<property name="firstName" value="hanuman"/>
+					<property name="lastName" value="sairam"/>
+				</bean>
+			</list>
+		</property>
+	</bean>
 
 </beans>
