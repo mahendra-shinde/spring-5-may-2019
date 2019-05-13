@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="emp" class="com.cg.models.Employee" autowire="byType">
+		<property name="firstName" value="Shivaji" />
+		<property name="lastName" value="Gaekwad"/>
+	<!-- 	<property name="department" ref="dept"/> -->
+	</bean>
+	
+	<bean id="dept" class="com.cg.models.Department">
+		<property name="name" value="QA" />
+		<property name="location" value="Pune"/>
+	</bean>
+</beans>
