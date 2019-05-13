@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean definition to be passed to BeanFactory or ApplicationContext BeanFactory 
+		would use this definition to create an instance and Store it in Spring IOC 
+		Container. You can request Access to this bean using method: getBean("dept") 
+		OR getBean(Department.class) OR getBean(Department.class,"dept") -->
+	<bean id="emp" class="com.cg.models.Employee">
+		<property name="firstName" value="Vijay" />
+		<property name="lastName" value="Mallya" />
+		<property name="department">
+			<bean  class="com.cg.models.Department">
+				<property name="name" value="HR" />
+				<property name="location" value="chennai" />
+			</bean>
+		</property>
+	</bean>
+	<bean id="currencyConverter" class="com.cg.app.intro.CurrencyConverterImpl">
+		<property name="exchangeService">
+			<bean class="com.cg.app.intro.ExchangeServiceImpl" >
+				<constructor-arg value="67.12" /> <!-- Spring has built in Data Converter's -->
+			</bean>
+		</property>
+	</bean>
+
+</beans>
