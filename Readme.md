@@ -14,7 +14,11 @@ This repository contains demos from my May-2019 batch.
 
     ![alt text](images/maven-settings.png "Maven Settings")
 
-7.  Press OK, Now Start creating Spring Boot projects!
+7.   Now, Goto "User Settings" from left side section and change the location of maven settings file.
+
+      ![alt text](images/maven-settings2.png "Maven Settings")  
+
+8.  Press OK, Now Start creating Spring Boot projects!
 
 
     NOTE: Spring framework version included in this offline repository are:
