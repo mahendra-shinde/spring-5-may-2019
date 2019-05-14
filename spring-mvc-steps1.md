@@ -23,7 +23,7 @@
 3. Right click on Project and choose "Java EE Tools" > Generate Deployment Descriptor Stub ("web.xml" file)
 
 4. Open web.xml file and add following lines:
-	(Make sure all these tags written are before "</web-app>" tag
+		(Make sure all these tags written are before ```</web-app>``` tag
 
   		<servlet>
   			<servlet-name>dispatcher</servlet-name>
@@ -52,6 +52,7 @@
 		3. context
 
 6.	Add following lines inside "spring.xml" file
+		
 		<context:component-scan base-package="com.cg"/>
 			<mvc:annotation-driven/>
 			<mvc:view-resolvers>
