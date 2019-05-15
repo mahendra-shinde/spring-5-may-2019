@@ -20,6 +20,7 @@
 		
 		jstl, version 1.2
 
+    The Complete POM.XML can be found [here](form-without-validation/pom.xml)
 3. Right click on Project and choose "Java EE Tools" > Generate Deployment Descriptor Stub ("web.xml" file)
 
 4. Open web.xml file and add following lines:
@@ -42,7 +43,8 @@
   		<url-pattern>*.obj</url-pattern>
     </servlet-mapping>
 	```
-  
+    The complete web.xml can be found [here](form-without-validation/src/main/webapp/WEB-INF/web.xml)
+
 5.	Creating new "Spring Bean Configuration file" inside "WEB-INF" folder
 	
 	filename: "spring.xml"
@@ -62,6 +64,8 @@
 		<mvc:jsp suffix=".jsp" prefix="/WEB-INF/pages/"  />
 	</mvc:view-resolvers>
 	```
+
+    The Complete spring.xml could be found [here](form-without-validation/src/main/webapp/WEB-INF/spring.xml)
 7.	Create new Class :
 		
 	name: 		Customer
@@ -76,38 +80,12 @@
         private String lastName;
         private String address;
         private String email;
-        public Integer getCustomerId() {
-            return customerId;
-        }
-        public void setCustomerId(Integer customerId) {
-            this.customerId = customerId;
-        }
-        public String getFirstName() {
-            return firstName;
-        }
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
-        }
-        public String getLastName() {
-            return lastName;
-        }
-        public void setLastName(String lastName) {
-            this.lastName = lastName;
-        }
-        public String getAddress() {
-            return address;
-        }
-        public void setAddress(String address) {
-            this.address = address;
-        }
-        public String getEmail() {
-            return email;
-        }
-        public void setEmail(String email) {
-            this.email = email;
-        }   
-    }
+     
     ```
+    DO GENERATE/ADD Getters and Setters for all properties
+
+    The complete Customer.java could be found [here](form-without-validation/src/main/java/com/cg/models/Customer.java) 
+
 8.  Create new Controller class:
 
     classname:  CustomerController
@@ -146,6 +124,9 @@
         }   
     }
     ```
+
+    The Complete CustomerController.java could be found [here](form-without-validation/src/main/java/com/cg/controllers/CustomerController.java)
+
 9.  Create new JSP file inside "src/main/webapp/WEB-INF/pages" directory with name "form.jsp"
 
     9.1 Add new taglib using following line:
@@ -170,6 +151,8 @@
     </s:form>
     ```
 
+    The Complete form.jsp could be found [here](form-without-validation/src/main/webapp/WEB-INF/pages/form.jsp)
+
 10. Create new JSP file inside "src/main/webapp/WEB-INF/pages" folder with name "success.jsp"
     
     Add following inside body section:
@@ -182,6 +165,8 @@
 	<!-- customer.lastName is translated into customer.getLastName() -->
     Customer : ${customer.lastName } ${customer.firstName}
     ```
+
+    The complete success.jsp could be found [here](form-without-validation/src/main/webapp/WEB-INF/pages/success.jsp)
 
 11.	Right click on Project > Run On Server 
 

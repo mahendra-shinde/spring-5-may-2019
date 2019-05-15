@@ -4,7 +4,7 @@ Perform Server side validation of MVC forms.
 
 ### Pre-requisites:
 
-	Please follow [these steps](spring-mvc-forms-steps.md) to create mvc forms project without validation. 
+Please follow [these steps](spring-mvc-forms-steps.md) to create mvc forms project without validation. 
 
 1. New Dependency "hibernate-validator"
    Open "pom.xml" file > Dependencies TAB
@@ -24,7 +24,7 @@ Perform Server side validation of MVC forms.
   		<version>6.0.16.Final</version>
   	</dependency>
 	```
-
+	click [here](form-with-validation/pom.xml) to view complete POM.XML file. 
 
 2. Modify the model class
 	
@@ -50,6 +50,7 @@ Perform Server side validation of MVC forms.
 		//getters/setters
 		}
 	```
+	The Complete Customer.java could be found [here](form-with-validation/src/main/java/com/cg/models/Customer.java)
 
 3.  Modify "CustomerController"
 
@@ -76,13 +77,17 @@ Perform Server side validation of MVC forms.
 			return mv;
 		}
 	```
+	The Complete CustomerController.java could be found [here](form-with-validation/src/main/java/com/cg/controllers/CustomerController.java)
 
 4.	Modify "form.jsp" page, add Error Tag for each field eg. error for firstName should be:
 		
 	```<s:errors path="firstName" />```
+
+	The Complete form.jsp could be found [here](form-with-validation/src/main/webapp/WEB-INF/pages/form.jsp)
 
 5.	Run Application on Server and try URL:
 
 	<AppBaseURL>/add-customer.obj
 
 	Click Submit button with ALL EMPTY fields.
+
