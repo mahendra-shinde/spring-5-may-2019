@@ -19,14 +19,18 @@ Create a copy of "AutowiringDemo" for implementing Property Placeholder
 
 4. Switch to "source" view of "spring.xml" file and add this line:
 
-    	<context:property-placeholder location="classpath:/myprops.properties" />
+	```xml
+    <context:property-placeholder location="classpath:/myprops.properties" />
+	```
 
 5. Modify "employee" bean like this:
 
-	    <bean id="emp" class="com.cg.models.Employee" autowire="byName">
+	```xml
+	<bean id="emp" class="com.cg.models.Employee" autowire="byName">
 	        <property name="firstName" value="${fname}" />
 	        <property name="lastName" value="${lname}"/>
-	    </bean>
+	</bean>
+	```
 
 NOTE: the values written with syntax ${KEY} is called "Spring Expression"
 	and usually referred as SpEL (Short for Spring Expression Language)

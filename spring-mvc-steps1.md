@@ -25,22 +25,23 @@
 4. Open web.xml file and add following lines:
 		(Make sure all these tags written are before ```</web-app>``` tag
 
-  		<servlet>
-  			<servlet-name>dispatcher</servlet-name>
-  			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-    	<param-name>contextConfigLocation</param-name>
-    	<param-value>
+	```xml
+  	<servlet>
+  	<servlet-name>dispatcher</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<init-param>
+   	<param-name>contextConfigLocation</param-name>
+   	<param-value>
          /WEB-INF/spring.xml
-    	</param-value>
-		</init-param>
-  		<load-on-startup>1</load-on-startup>
-    	</servlet>
-  
-   	 	<servlet-mapping>
-  			<servlet-name>dispatcher</servlet-name>
-  			<url-pattern>*.obj</url-pattern>
-    	</servlet-mapping>
+   	</param-value>
+	</init-param>
+	<load-on-startup>1</load-on-startup>
+   	</servlet>
+	<servlet-mapping>
+  		<servlet-name>dispatcher</servlet-name>
+  		<url-pattern>*.obj</url-pattern>
+    </servlet-mapping>
+	```
   
 5.	Creating new "Spring Bean Configuration file" inside "WEB-INF" folder
 	
@@ -54,12 +55,13 @@
 
 6.	Add following lines inside "spring.xml" file
 		
-		<context:component-scan base-package="com.cg"/>
-			<mvc:annotation-driven/>
-			<mvc:view-resolvers>
-				<mvc:jsp suffix=".jsp" prefix="/WEB-INF/pages/"  />
-		</mvc:view-resolvers>
-
+	```xml
+	<context:component-scan base-package="com.cg"/>
+	<mvc:annotation-driven/>
+	<mvc:view-resolvers>
+		<mvc:jsp suffix=".jsp" prefix="/WEB-INF/pages/"  />
+	</mvc:view-resolvers>
+	```
 7.	create new folder inside "WEB-INF" with name "pages"
 
 8.	create new JSP page "hello" inside "WEB-INF/pages" folder
@@ -70,21 +72,23 @@
 
 10.	Create new Class :
 		
-		name: 		HelloController
-		package:	com.cg.controllers
+	name: 		HelloController
+	
+	package:	com.cg.controllers
 
-		@Controller
-		@RequestMapping("/hello.obj")
-		public class HelloControllers {
+	```java
+	@Controller
+	@RequestMapping("/hello.obj")
+	public class HelloControllers {
 
-			@GetMapping
-			public ModelAndView process(){
+	@GetMapping
+	public ModelAndView process(){
 			ModelAndView mv = new ModelAndView("hello");//VIEW
-			mv.addObject("user", "Chris Evans");//MODEL
-			mv.addObject("today", new Date());//MODEL
-			return mv;
-			}
+		mv.addObject("user", "Chris Evans");//MODEL
+		mv.addObject("today", new Date());//MODEL
+		return mv;
 		}
+	}
 
 11.	Right click on Project > Run On Server 
 
