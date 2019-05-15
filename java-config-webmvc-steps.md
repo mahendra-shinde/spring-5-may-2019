@@ -23,7 +23,7 @@
   	</dependency>
   </dependencies>
   ```
-	> The Complete POM.XML could be found [here](javaconfigwebdemo/pom.xml)
+>The Complete POM.XML could be found [here](javaconfigwebdemo/pom.xml)
 
 3.  Right click on project > properties > Targeted Runtime
         Select either Tomcat or Pivotal tc Press OK
@@ -70,8 +70,7 @@
 		}
 	}
 	```
-	> Complete DispatcherConfig.java could be found [here]
-	(javaconfigwebdemo/src/main/java/com/cg/javaconfigweb/AppConfig.java)
+	> Complete DispatcherConfig.java could be found [here]	(javaconfigwebdemo/src/main/java/com/cg/javaconfigweb/AppConfig.java)
 
 6.	Create new Java class "AppConfig"
 
