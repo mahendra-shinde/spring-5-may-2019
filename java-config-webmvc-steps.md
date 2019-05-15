@@ -70,7 +70,7 @@
 		}
 	}
 	```
-	> Complete DispatcherConfig.java could be found [here]	(javaconfigwebdemo/src/main/java/com/cg/javaconfigweb/AppConfig.java)
+	> Complete DispatcherConfig.java could be found [here](javaconfigwebdemo/src/main/java/com/cg/javaconfigweb/AppConfig.java)
 
 6.	Create new Java class "AppConfig"
 
