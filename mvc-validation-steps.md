@@ -2,6 +2,9 @@
 
 Perform Server side validation of MVC forms.
 
+### Pre-requisites:
+
+	Please follow [these steps](spring-mvc-forms-steps.md) to create mvc forms project without validation. 
 
 1. New Dependency "hibernate-validator"
    Open "pom.xml" file > Dependencies TAB
