@@ -14,14 +14,18 @@ Perform Server side validation of MVC forms.
 
    If you get NO search results write following lines in POM.xml
 
-		<dependency>
-  			<groupId>org.hibernate.validator</groupId>
-  			<artifactId>hibernate-validator</artifactId>
-  			<version>6.0.16.Final</version>
-  		</dependency>
+	```xml
+	<dependency>
+  		<groupId>org.hibernate.validator</groupId>
+  		<artifactId>hibernate-validator</artifactId>
+  		<version>6.0.16.Final</version>
+  	</dependency>
+	```
+
 
 2. Modify the model class
 	
+	```java
 		import javax.validation.constraints.*;
 
 		public class Customer {
@@ -42,9 +46,11 @@ Perform Server side validation of MVC forms.
 		private String email;
 		//getters/setters
 		}
+	```
 
 3.  Modify "CustomerController"
 
+	```java
 		@RequestMapping(value="/add-customer.obj",method=RequestMethod.POST)
 		public ModelAndView submitForm(
 				@Valid @ModelAttribute("customer") Customer customer,
@@ -66,6 +72,7 @@ Perform Server side validation of MVC forms.
 			}
 			return mv;
 		}
+	```
 
 4.	Modify "form.jsp" page, add Error Tag for each field eg. error for firstName should be:
 		
