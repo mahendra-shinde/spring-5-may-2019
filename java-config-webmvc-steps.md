@@ -30,9 +30,11 @@
 
 4.  Create a new Java Class
 
-    classname:  MyInitializer
-    package:    com.cg.javaconfigweb
-    Implements: WebApplicationInitializer
+    classname:  	MyInitializer
+
+    package:    	com.cg.javaconfigweb
+
+    Implements: 	WebApplicationInitializer
 
     ```java
     AnnotationConfigWebApplicationContext context
