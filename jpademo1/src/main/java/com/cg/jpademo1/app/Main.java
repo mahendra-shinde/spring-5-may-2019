@@ -24,7 +24,7 @@ public class Main {
 		System.out.println("Movie details "+m1.getTitle()+" by "+m1.getDirector());
 		
 		Movie m2 = service.findById(10023);
-		System.out.println("Movie found: "+m2.getTitle()+" budget: "+m2.getBudget());
+		System.out.println("Movie found: "+m2.getTitle()+" budget: "+m2.getBudget().longValue());
 		
 	}
 

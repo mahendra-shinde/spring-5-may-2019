@@ -47,7 +47,7 @@ public class AppConfig {
 		
 		JpaTransactionManager tm = new JpaTransactionManager();
 		tm.setEntityManagerFactory(
-				factory().getNativeEntityManagerFactory());
+				factory().getObject());
 		return tm;
 	}
 	

@@ -15,7 +15,7 @@ public class MovieServiceImpl implements MovieService {
 
 	@Autowired private MovieDAO dao;
 	
-	@Transactional(propagation=Propagation.REQUIRED)
+	@Transactional
 	public void save(Movie m) {
 		dao.save(m);
 	}
