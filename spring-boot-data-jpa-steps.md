@@ -2,21 +2,27 @@
 
 1.  New -> Spring Starter project
 
-    ```ini
+    ```yaml
     name: 		bootdemo2
     group:		com.cg
     artifact:	bootdemo2
-    package:	com.cg.bootdemo2
+    package:    com.cg.bootdemo2
     ```
 
     > Click Next
 
 2.  add "web" and "jpa"
     
+    ![alt text](images/select-web.png "Choose 'web' from List of dependencies")
+    
+    ![alt text](images/select-jpa.png "Choose 'JPA' from List of dependencies")
+
     > Click next
 
 3.  change bootVersion to 2.1.4.RELEASE
 
+     ![alt text](images/select-boot-version.png "Change boot version to 2.1.4.RELEASE")
+     
 4.  Click "Finish"
 
 5.  Open ```src/main/resources/application.properties``` file and add following properties:
@@ -51,7 +57,7 @@
 
 7.  Create a new Entity class 
 
-    ```ini
+    ```yaml
     Classname:  Movie
     Package:    com.cg.bootdemo2.entities
     ```
@@ -79,7 +85,7 @@
 
 8.  Create new DAO Interface 
 
-    ```ini
+    ```yaml
     Interface name: MovieDAO
     Package:        com.cg.bootdemo2.dao
     ```
@@ -96,7 +102,7 @@
 
 9.  Create new Service Interface
 
-    ```init
+    ```yaml
     Interface name: MovieService
     Package name:   com.cg.bootdemo2.services
     ```
@@ -113,7 +119,7 @@
 
 10. Create new Service Implementation class
 
-    ```ini
+    ```yaml
     Classname:  MovieServiceImpl
     Package:    com.cg.bootdemo2.services
     ```
@@ -142,7 +148,7 @@
 
 11. Create a new controller 
 
-    ```ini
+    ```yaml
     Classname:  MovieController
     Package:    com.cg.bootdemo2.controllers
     ```
