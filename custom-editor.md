@@ -10,53 +10,61 @@
 
 2. Create new class "CustomDateEditor"
 
-	
-		public class CustomDateEditor  extends PropertyEditorSupport	{
+	```java
+	public class CustomDateEditor  extends PropertyEditorSupport	{
 
-		private DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-		@Override
-		public String getAsText() {
-			return df.format(getValue());
-		}
+	private DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+	@Override
+	public String getAsText() {
+		return df.format(getValue());
+	}
 
-		@Override
-		public void setAsText(String text) throws IllegalArgumentException {
-			try {
-				setValue(df.parse(text));
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				throw new IllegalArgumentException("Invalid Date syntax, please use dd-MM-yyyy");
-			}
-		  }
+	@Override
+	public void setAsText(String text) throws IllegalArgumentException {
+		try {
+			setValue(df.parse(text));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new IllegalArgumentException("Invalid Date syntax, please use dd-MM-yyyy");
 		}
+	  }
+	}
+	```
+
 3.	Edit "spring.xml" file with new BEAN:
 
-		<bean id="customEditor" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
-			<property name="customEditors">
-				<map>
-					<entry key="java.util.Date" 
-					value="com.cg.models.CustomDateEditor" />
-				</map>
-			</property>
-		</bean>
+	```xml
+	<bean id="customEditor" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="java.util.Date" 
+				value="com.cg.models.CustomDateEditor" />
+			</map>
+		</property>
+	</bean>
+	```
 		
 3.	Modify "employee" bean definition:
 
-		<bean id="emp" class="com.cg.models.Employee" autowire="byName">
-			<property name="firstName" value="Shivaji" />
-			<property name="lastName" value="Gaekwad"/>
-			<property name="dob" value="12-05-1959"/>
-		</bean>
+	```xml
+	<bean id="emp" class="com.cg.models.Employee" autowire="byName">
+		<property name="firstName" value="Shivaji" />
+		<property name="lastName" value="Gaekwad"/>
+		<property name="dob" value="12-05-1959"/>
+	</bean>
+	```
 
 4.	Modify Main method:
-		
-		AbstractApplicationContext context =
+
+	```java	
+	AbstractApplicationContext context =
 			new ClassPathXmlApplicationContext("spring.xml");
-		Employee e = context.getBean(Employee.class);
-		System.out.println(e.getFirstName());
-		System.out.println(e.getDepartment().getLocation());
-		System.out.println(e.getDob());
+	Employee e = context.getBean(Employee.class);
+	System.out.println(e.getFirstName());
+	System.out.println(e.getDepartment().getLocation());
+	System.out.println(e.getDob());
 		
-		System.out.println("Shutdown the Spring IOC COntainer");
-		context.close();
+	System.out.println("Shutdown the Spring IOC COntainer");
+	context.close();
+	```
