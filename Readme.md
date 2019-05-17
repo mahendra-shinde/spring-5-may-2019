@@ -33,3 +33,4 @@ Spring MVC Form Validation | [form-with-validation](form-with-validation/) | [Wa
 Spring ORM (JPA) | [jpademo1](jpademo1/) | [Walkthrough](spring-jpa-steps.md)
 Spring Boot Web Basic | [bootdemo1](bootdemo1/) | [Walkthrough](spring-boot-web-steps.md)
 Spring Boot data-jpa | [bootdemo2](bootdemo2/) | [Walkthrough](spring-boot-data-jpa-steps.md)
+Spring REST Params Demo  | [rest-param-demo](rest-param-demo/) | [Walkthrough](spring-rest-path-vs-request-param.md)
