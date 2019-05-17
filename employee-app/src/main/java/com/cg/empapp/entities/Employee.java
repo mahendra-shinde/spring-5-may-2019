@@ -2,6 +2,9 @@ package com.cg.empapp.entities;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement //Mark this class for XML conversion
 public class Employee implements Serializable{
 
 	private Integer empId;

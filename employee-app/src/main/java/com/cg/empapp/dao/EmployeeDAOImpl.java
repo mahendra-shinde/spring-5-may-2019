@@ -32,6 +32,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	@Override
 	public Employee findById(Integer id) {
 		Employee emp = empData.get(id);
+		System.out.println("Found :"+emp.getFirstName());
+		
 		if(emp==null) {
 			throw new ApplicationException("Employee not found!");
 		}
